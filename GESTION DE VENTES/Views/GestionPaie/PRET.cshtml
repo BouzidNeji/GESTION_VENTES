@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "BL_ACHAT_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des prêts</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <table id="tab_bla" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Numéro </th>
+                        <th>Date</th>
+                        <th>Collaborateur</th>
+                        <th style="text-align:right">Montant</th>
+                        <th style="text-align:right">Durée en mois</th>
+                        <th>Tranches payées</th>
+                        <th>Reste à payer</th>
+                        <th>Etat</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>PR0001</td>
+                        <td>
+                            01/05/2020
+                        </td>
+                        <td>Ahmed Guidara</td>
+                        <td style="text-align:right"> 1000,000 </td>
+                        <td style="text-align:right"> 12 </td>
+                        <td>9</td>
+                        <td style="color:red">100,000</td>
+                        <td style="color:green">Accepté / En cours</td>
+                    </tr>
+                    <tr>
+                        <td>PR0002</td>
+                        <td>
+                            01/12/2021
+                        </td>
+                        <td>Tarek Ousleti</td>
+                        <td style="text-align:right"> 1500,000 </td>
+                        <td style="text-align:right"> 5 </td>
+                        <td>3</td>
+                        <td style="color:red">600,000</td>
+                        <td style="color:green">Accepté / En cours</td>
+                    </tr>
+                    <tr>
+                        <td>PR0002</td>
+                        <td>
+                            01/02/2021
+                        </td>
+                        <td>Tarek Ousleti</td>
+                        <td style="text-align:right"> 2000,000 </td>
+                        <td style="text-align:right"> 12 </td>
+                        <td>0</td>
+                        <td style="color:red">2000,000</td>
+                        <td style="color:red">Réfusé</td>
+                    </tr>
+                    <tr>
+                        <td>PR0002</td>
+                        <td>
+                            01/02/2021
+                        </td>
+                        <td>Ben Hammouda</td>
+                        <td style="text-align:right"> 500,000 </td>
+                        <td style="text-align:right"> 5 </td>
+                        <td>0</td>
+                        <td style="color:red">500,000</td>
+                        <td>En attente de confirmation</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_bla').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").addClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>
+

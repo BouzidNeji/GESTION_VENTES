@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.Title = "BL_VENTE_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des BL de vente</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <!-- /.card-header -->
+        <div class="card-header">
+            <button onclick="location.href='/GestionBL/ADD_BL'" style="float:right" class="btn btn-success"> Ajouter </button>
+        </div>
+        <div class="card-body">
+            <table id="tab_blv" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Code </th>
+                        <th>Numéro </th>
+                        <th>Date</th>
+                        <th>Client</th>
+                        <th>Livreur</th>
+                        <th>Camion</th>
+                        <th>Type</th>
+                        <th style="text-align:right">Montant</th>
+                        <th style="width:100px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BL210200781</td>
+                        <td>BLF210200582</td>
+                        <td>
+                            10/02/2021
+                        </td>
+                        <td>Najeh ben Rkik</td>
+                        <td>Salah ben Ahmed</td>
+                        <th>IVECO - 160 TU 4420</th>
+                        <td>Avec transport</td>
+                        <td style="text-align:right"> 1235,000 </td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/GestionBL/DETAILS_BL" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BLA002</td>
+                        <td>Non défini </td>
+                        <td>
+                            10/03/2020
+                        </td>
+                        <td>CL0003</td>
+                        <td>STE Ben Amor</td>
+                        <th>IVECO - 160 TU 4420</th>
+                        <td>Avec transport</td>
+                        <td style="text-align:right"> 500,520 </td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/GestionBL/DETAILS_BL" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BL210200803</td>
+                        <td>BLF210200582 </td>
+                        <td>13/02/2021 </td>
+                        <td>STE Afif</td>
+                        <td>Amor Miladi</td>
+                        <th>FIAT OM - 89 TU 1585</th>
+                        <td>Vente directe</td>
+                        <td style="text-align:right"> 312,520 </td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/GestionBL/DETAILS_BL" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_blv').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").addClass("active");
+    });
+</script>
+

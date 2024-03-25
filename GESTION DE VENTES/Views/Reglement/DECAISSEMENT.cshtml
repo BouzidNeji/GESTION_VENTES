@@ -1,0 +1,155 @@
+﻿
+@{
+    ViewBag.Title = "BL_VENTE_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des dépenses</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <!-- /.card-header -->
+        <div class="card-header">
+            <button onclick="show_modal('modal-add')" style="float:right" class="btn btn-success"> Ajouter </button>
+        </div>
+        <div class="card-body">
+            <table id="tab_blv" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Numéro </th>
+                        <th>Date</th>
+                        <th>Livreur</th>
+                        <th style="text-align:right">Montant</th>
+                        <th>Motif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>DEP000044</td>
+                        <td>
+                            14/02/2021
+                        </td>
+                        <td>Salah ben Ahmed</td>
+                        <td style="text-align:right"> 36,000 </td>
+                        <td>Carte téléphone</td>
+                    </tr>
+                    <tr>
+                        <td>DEP000022</td>
+                        <td>
+                            14/02/2021
+                        </td>
+                        <td>Ahlem brahim</td>
+                        <td style="text-align:right"> 5,600 </td>
+                        <td>Carte téléphone</td>
+                    </tr>
+                    <tr>
+                        <td>DEP000004</td>
+                        <td>
+                            11/02/2021
+                        </td>
+                        <td>Mohamed hsan</td>
+                        <td style="text-align:right"> 20,000 </td>
+                        <td>Route</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Ajouter dépense</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label>Date</label>
+                            <input type="date" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Chauffeur</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Montant</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Motif</label>
+                            <select class="form-control">
+                                <option>Carte téléphone</option>
+                                <option>Gasoil</option>
+                                <option>Route</option>
+                                <option>Non prévue</option>
+                            </select>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_blv').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").addClass("active");
+    });
+</script>
+

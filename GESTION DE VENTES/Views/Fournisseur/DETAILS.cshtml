@@ -1,0 +1,332 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="~/Content/AdminLTE-master/plugins/chart.js/Chart.min.js"></script>
+<link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Fiche fournisseur</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <h3 class="profile-username text-center">Ste Hammouda</h3>
+                        <p class="text-muted text-center">0555174L/A/M/000</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Ville</b> <a class="float-right">Mahdia</a>
+                            </li>
+                            <li class="list-group-item">
+                                <b>Téléphone</b> <a class="float-right">71 552 336</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Général</a></li>
+                            <li class="nav-item"><a class="nav-link " href="#info" data-toggle="tab">Informations</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Liste des BLF</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#calendrier" data-toggle="tab">Statistiques</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total BLF</span>
+                                                    <span class="info-box-number">72</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">CA BLF</span>
+                                                    <span class="info-box-number">17 410.000</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Moyenne commande</span>
+                                                    <span class="info-box-number">241,805</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Solde</span>
+                                                    <span class="info-box-number" style="color:red">-780,000</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <h3>Présentation du chiffre d'affaire par mois</h3>
+                                <hr />
+                                <div class="row" style="width:100%">
+                                    <center>
+                                        <div class="card card-info">
+                                            <div class="card-body">
+                                                <div class="chart">
+                                                    <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; min-width: 700px"></canvas>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </center>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="info">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <label for="exampleInputEmail1">Code <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="F00001">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="exampleInputEmail1">Nom complet <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="Ste Hammouda">
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="exampleInputEmail1">Matricule fiscale/CIN <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="0555174L/A/M/000">
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <label for="exampleInputEmail1">Adresse <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="17 Rue de mahdia">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleInputEmail1">Ville <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="Mahdia">
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="exampleInputEmail1">Téléphone <span style="color:red">*</span></label>
+                                        <input type="text" class="form-control" id="exampleInputEmail1" value="71 555 360">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <br />
+                                        <div class="col-md-4" style="float:right">
+                                            <button type="button" class="form-control btn btn-success">Valider</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane" id="settings">
+                                <br />
+                                <div class="row">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>BLF</th>
+                                                <th>Montant</th>
+                                                <th>Date</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>BLF00025</td>
+                                                <td>
+                                                    117,050
+                                                </td>
+                                                <td>07-02-2020</td>
+                                                <td><span class="fa fa-search" onclick="location.href='/GestionBLF/DETAILS_BLF'"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BLF00026</td>
+                                                <td>
+                                                    1 500,000
+                                                </td>
+                                                <td>15-02-2020</td>
+                                                <td><span class="fa fa-search" onclick="location.href='/GestionBLF/DETAILS_BLF'"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BLF00027</td>
+                                                <td>
+                                                    915,000
+                                                </td>
+                                                <td>15-02-2020</td>
+                                                <td><span class="fa fa-search" onclick="location.href='/GestionBLF/DETAILS_BLF'"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="calendrier">
+                                <section class="content">
+
+                                    <div class="row">
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <div class="info-box">
+                                                <div class="info-box-content">
+                                                    <center>
+                                                        <span class="info-box-text">Dernière BLF</span>
+                                                        <span class="info-box-number">
+                                                            BLF00235 - 188,000
+                                                        </span>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <div class="info-box">
+                                                <div class="info-box-content">
+                                                    <center>
+                                                        <span class="info-box-text">Max BLF</span>
+                                                        <span class="info-box-number">
+                                                            4 230,000
+                                                        </span>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <div class="info-box">
+                                                <div class="info-box-content">
+                                                    <center>
+                                                        <span class="info-box-text">Min BLF</span>
+                                                        <span class="info-box-number">
+                                                            170,100
+                                                        </span>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3 col-sm-6 col-12">
+                                            <div class="info-box">
+                                                <div class="info-box-content">
+                                                    <center>
+                                                        <span class="info-box-text">Service livraison</span>
+                                                        <span class="info-box-number">
+                                                            775,000
+                                                        </span>
+                                                    </center>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h3 class="card-title" style="color:green">TOP 5 articles achetés</h3>
+                                        </div>
+                                        <!-- /.card-header -->
+                                        <div class="card-body">
+                                            <table class="table table-bordered">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Article</th>
+                                                        <th>Quantité achetée</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>ARTICLE 1</td>
+                                                        <td><center><strong>7000</strong></center></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ARTICLE 2</td>
+                                                        <td><center><strong>6582</strong></center></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ARTICLE 3</td>
+                                                        <td><center><strong>5200</strong></center></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>ARTICLE 4</td>
+                                                        <td><center><strong>780</strong></center></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    var areaChartData = {
+        labels: ['Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        datasets: [
+          {
+              label: 'CA COMMANDE',
+              backgroundColor: 'rgba(60,141,188,0.9)',
+              borderColor: 'rgba(60,141,188,0.8)',
+              pointRadius: false,
+              pointColor: '#3b8bba',
+              pointStrokeColor: 'rgba(60,141,188,1)',
+              pointHighlightFill: '#fff',
+              pointHighlightStroke: 'rgba(60,141,188,1)',
+              data: [670, 980, 460, 500, 700, 1200]
+          }
+        ]
+    }
+    var areaChartOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+        legend: {
+            display: false
+        },
+        scales: {
+            xAxes: [{
+                gridLines: {
+                    display: false,
+                }
+            }],
+            yAxes: [{
+                gridLines: {
+                    display: false,
+                }
+            }]
+        }
+    }
+    //-------------
+    //- LINE CHART -
+    //--------------
+    var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
+    var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
+    var lineChartData = jQuery.extend(true, {}, areaChartData)
+    lineChartData.datasets[0].fill = false;
+    //lineChartData.datasets[1].fill = false;
+    lineChartOptions.datasetFill = false
+
+    var lineChart = new Chart(lineChartCanvas, {
+        type: 'line',
+        data: lineChartData,
+        options: lineChartOptions
+    })
+</script>

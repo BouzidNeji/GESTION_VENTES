@@ -1,0 +1,145 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<br />
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="callout callout-info">
+                    <h5> Bon de livraison vente - Najeh ben Rkik - N° BL2102174 <span style="float:right;color:green"><strong>IVECO - 160 TU 4420 - Salah ben Ahmed</strong></span></h5>
+                </div>
+
+                <div class="invoice p-3 mb-3">
+                    <!-- title row -->
+                    <div class="row">
+                        <div class="col-12">
+                            <h4>
+                                <i class="fas fa-globe"></i> STE EL BEY.
+                                <small class="float-right">Date: 02/02/2020</small>
+                            </h4>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- info row -->
+                    <div class="row invoice-info">
+                        <div class="col-sm-4 invoice-col">
+                            De
+                            <address>
+                                <strong>STE EL BEY</strong><br>
+                                Rue de mahdia, Mahdia<br>
+                                Mahdia, 5000<br>
+                                Tel: 71 252 252<br>
+                            </address>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-4 invoice-col">
+                            A
+                            <address>
+                                <strong>Najeh ben Rkik</strong><br>
+                                Avenue Hedi Nouira<br>
+                                Ariana, 2080<br>
+                                Tel: 71 252 336<br>
+                            </address>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-sm-4 invoice-col">
+                            <b>N° BL2102174</b><br>
+                            <br>
+                            <b>Mode de paiement</b> ESPECES<br>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- Table row -->
+                    <div class="row">
+                        <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Article</th>
+                                        <th>Quantité</th>
+                                        <th>PU</th>
+                                        <th>HT</th>
+                                        <th>TVA</th>
+                                        <th>TTC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Brique 8 trous</td>
+                                        <td>1000</td>
+                                        <td>0,530</td>
+                                        <td>530,000</td>
+                                        <td>19%</td>
+                                        <td>602,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brique 16 trous</td>
+                                        <td>100</td>
+                                        <td>0,560</td>
+                                        <td>56,000</td>
+                                        <td>19%</td>
+                                        <td>78,320</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gravier</td>
+                                        <td>2</td>
+                                        <td>70,000</td>
+                                        <td>140,000</td>
+                                        <td>19%</td>
+                                        <td>173,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <div class="row">
+                        <!-- accepted payments column -->
+                        <div class="col-6">
+
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6">
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <tr>
+                                        <th style="width:50%">Total HT:</th>
+                                        <td>726,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Tax (19%)</th>
+                                        <td>4,000</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Total TTC:</th>
+                                        <td>823,320</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <!-- /.row -->
+                    <!-- this row will not appear when printing -->
+                    <div class="row no-print">
+                        <div class="col-12">
+
+                            <button type="button" class="btn btn-success float-right">
+                                <i class="far fa-credit-card"></i> Imprimer
+                            </button>
+                            <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                <i class="fas fa-download"></i> Télécharger PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

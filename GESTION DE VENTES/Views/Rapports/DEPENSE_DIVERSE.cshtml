@@ -1,0 +1,114 @@
+﻿
+@{
+    ViewBag.Title = "BL_ACHAT_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des dépenses <span style="color:orange">diverses</span></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <table id="tab_bla" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Chauffeur</th>
+                        <th style="text-align:right">Montant</th>
+                        <th>Motif</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            15/01/2021
+                        </td>
+                        <td>Ahmed Guidara</td>
+                        <td style="text-align:right"> 30,000 </td>
+                        <td><center style="color:orange">Route</center></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            15/01/2021
+                        </td>
+                        <td>Ghazi Soltani</td>
+                        <td style="text-align:right"> 15,000 </td>
+                        <td><center style="color:orange">Carte téléphone</center></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            14/01/2021
+                        </td>
+                        <td>Ahmed Guidara</td>
+                        <td style="text-align:right"> 9,000 </td>
+                        <td><center style="color:orange">Route</center></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            13/01/2021
+                        </td>
+                        <td>Amine Boubakker</td>
+                        <td style="text-align:right"> 52,000 </td>
+                        <td><center style="color:orange">Gasoil</center></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            10/01/2021
+                        </td>
+                        <td>Sami ben Ali</td>
+                        <td style="text-align:right"> 17,000 </td>
+                        <td><center style="color:orange">Carte téléphone</center></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_bla').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").addClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>
+

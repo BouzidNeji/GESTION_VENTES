@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Liste des collaborateurs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des collaborateurs</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <!-- Main content -->
+    <section class="content">
+        <div class="card">
+            <!-- /.card-header -->
+            <div class="card-header">
+                <button onclick="show_modal('modal-add')" style="float:right" class="btn btn-success"> Ajouter </button>
+            </div>
+            <div class="card-body">
+                <table id="tab_colla" class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th>Code </th>
+                            <th>Nom complet</th>
+                            <th>Fonction</th>
+                            <th>Téléphone</th>
+                            <th style="width:100px"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>C0001</td>
+                            <td>
+                                Salah ben ali
+                            </td>
+                            <td>Livreur</td>
+                            <td>22 556 996</td>
+                            <td style="text-align:right">
+                                <div class="btn-group btn-group-sm">
+                                    <a href="/Collaborateur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>C0002</td>
+                            <td>
+                                Ahmed agrbui
+                            </td>
+                            <td>Livreur</td>
+                            <td>55 996 669</td>
+                            <td style="text-align:right">
+                                <div class="btn-group btn-group-sm">
+                                    <a href="/Collaborateur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>C0003</td>
+                            <td>
+                                Mohamed hsan
+                            </td>
+                            <td>Chauffeur</td>
+                            <td>55 885 663</td>
+                            <td style="text-align:right">
+                                <div class="btn-group btn-group-sm">
+                                    <a href="/Collaborateur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>C0004</td>
+                            <td>
+                                Ahlem brahim
+                            </td>
+                            <td>Responsable vente</td>
+                            <td>55 224 115</td>
+                            <td style="text-align:right">
+                                <div class="btn-group btn-group-sm">
+                                    <a href="/Collaborateur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+</div>
+<!-- /.content -->
+
+
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nouveau collaborateur</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Code </label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Nom complet </label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Fonction </label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    $(function () {
+        $('#tab_colla').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").addClass("active");
+        $("#DDB_COLLABORATEUR").addClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").removeClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>

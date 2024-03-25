@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "Liste des fournisseurs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Motifs de dépenses diverses</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <!-- /.card-header -->
+        <div class="card-header">
+            <button onclick="show_modal('modal-add')" style="float:right" class="btn btn-success"> Ajouter </button>
+        </div>
+        <div class="card-body">
+            <table id="tab_fournisseur" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Motif </th>
+                        <th style="width:100px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Gasoil</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Route</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Carte téléphone</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Non prévue</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nouveau motif</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Motif</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    $(function () {
+        $('#tab_fournisseur').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").addClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").addClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").removeClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>

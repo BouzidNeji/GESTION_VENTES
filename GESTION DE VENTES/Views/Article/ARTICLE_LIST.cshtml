@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Liste des articles";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des articles</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="content">
+    <div class="card">
+        <div class="card-header">
+            <button onclick="show_modal('modal-add')" style="float:right" class="btn btn-success"> Ajouter </button>
+        </div>
+        <div class="card-body">
+            <table id="tab_article" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Code </th>
+                        <th>Désignation</th>
+                        <th>Prix standard d'achat</th>
+                        <th style="text-align:right">Prix standard de vente</th>
+                        <th style="width:100px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>B12T</td>
+                        <td>Brique 12 trous</td>
+                        <td style="text-align:right">0,430</td>
+                        <td style="text-align:right">0,580</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Article/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>B08T</td>
+                        <td>
+                            Brique 8 trous
+                        </td>
+                        <td style="text-align:right">0,410</td>
+                        <td style="text-align:right">0,510</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Article/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>GRAV</td>
+                        <td>
+                            Gravier
+                        </td>
+                        <td style="text-align:right">100,000</td>
+                        <td style="text-align:right">121,000</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Article/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nouveau article</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Code</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Désignation</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Prix achat</label>
+                            <input type="number" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Prix de vente</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_article').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").addClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").addClass("active");
+        $("#GDD").removeClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>

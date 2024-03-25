@@ -1,0 +1,235 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="~/Scripts/plugins/chart.js/Chart.min.js"></script>
+<script src="~/Scripts/plugins/fullcalendar/main.min.js"></script>
+<script src="~/Scripts/plugins/fullcalendar-daygrid/main.min.js"></script>
+<script src="~/Scripts/plugins/fullcalendar-timegrid/main.min.js"></script>
+<script src="~/Scripts/plugins/fullcalendar-interaction/main.min.js"></script>
+<script src="~/Scripts/plugins/fullcalendar-bootstrap/main.min.js"></script>
+<link rel="stylesheet" href="~/Scripts/plugins/fullcalendar/main.min.css">
+<link rel="stylesheet" href="~/Scripts/plugins/fullcalendar-daygrid/main.min.css">
+<link rel="stylesheet" href="~/Scripts/plugins/fullcalendar-timegrid/main.min.css">
+<link rel="stylesheet" href="~/Scripts/plugins/fullcalendar-bootstrap/main.min.css">
+<link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Fiche collaborateur</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                    <div class="card-body box-profile">
+                        <h3 class="profile-username text-center">Salah ben ali</h3>
+                        <p class="text-muted text-center">Livreur</p>
+                        <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                                <b>Téléphone</b> <a class="float-right">22 556 996</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+                <!-- About Me Box -->
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <h3 class="card-title">Les 5 dernières missions</h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <p class="text-muted">
+                            BL2100052 - Client: Hosni
+                        </p>
+                        <strong>14-02-2021 13:10:12</strong>
+                        <hr>
+                        <p class="text-muted"> BL2100051 - Client: Ahmed Makni</p>
+                        <strong>11-02-2021 17:55:44</strong>
+                        <hr>
+                        <p class="text-muted"> BL2100030 - Client: Mahmoud Guiza</p>
+                        <strong>05-02-2021 10:40:02</strong>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+            <div class="col-md-9">
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Statistiques</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Encaissements</a></li>
+                        </ul>
+                    </div><!-- /.card-header -->
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-info"><i class="far fa-user"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Livraison</span>
+                                                <span class="info-box-number">24</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-success"><i class="far fa-flag"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Encaissement</span>
+                                                <span class="info-box-number">17 600,000</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-warning"><i class="far fa-copy"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Total dépense</span>
+                                                <span class="info-box-number" style="color:orange">150,000</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+                                            <div class="info-box-content">
+                                                <span class="info-box-text">Solde</span>
+                                                <span class="info-box-number" style="color:red">45,000</span>
+                                            </div>
+                                            <!-- /.info-box-content -->
+                                        </div>
+                                        <!-- /.info-box -->
+                                    </div>
+                                    <!-- /.col -->
+                                </div>
+                                <div class="row">
+                                    <h3>Liste des BL avec manque</h3>
+                                    <hr />
+                                    <table id="tab_colla" class="table table-bordered table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>BL vente </th>
+                                                <th>BL Fournisseur</th>
+                                                <th>Client</th>
+                                                <th>Date</th>
+                                                <th>TTC</th>
+                                                <th style="width:100px"></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>BL2100023</td>
+                                                <td>
+                                                    BLF210200088
+                                                </td>
+                                                <td>Ahmed Omrane</td>
+                                                <td>19/02/2021</td>
+                                                <td>180,000</td>
+                                                <td style="text-align:right">
+                                                    <div class="btn-group btn-group-sm">
+                                                        <a href="/GestionBL/DETAILS_BL" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="settings">
+                                <div class="row">
+                                    <div class="col-md-5">
+                                        <input type="date" class="form-control" />
+                                    </div>
+                                    <div class="col-md-2">
+                                        <input type="button" class="form-control btn-default" value="Recherche" />
+                                    </div>
+                                </div>
+                                <br />
+                                <div class="row">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>Client</th>
+                                                <th>Montant</th>
+                                                <th>Mode de règlement</th>
+                                                <th>Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>Client DEMO 1</td>
+                                                <td>
+                                                    117,050
+                                                </td>
+                                                <td>ESP</td>
+                                                <td>13-02-2020 15:20:01</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Client DEMO 2</td>
+                                                <td>
+                                                    5 500,000
+                                                </td>
+                                                <td>CHQ 60</td>
+                                                <td>13-02-2020 16:44:17</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Client DEMO 2</td>
+                                                <td>
+                                                    1 115,000
+                                                </td>
+                                                <td>ESP</td>
+                                                <td>13-02-2020 16:59:30</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Client DEMO 4</td>
+                                                <td>
+                                                    440,000
+                                                </td>
+                                                <td>ESP</td>
+                                                <td>13-02-2020 17:20:20</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Client DEMO 3</td>
+                                                <td>
+                                                    350,500
+                                                </td>
+                                                <td>ESP</td>
+                                                <td>14-02-2020 09:14:48</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.tab-content -->
+                    </div><!-- /.card-body -->
+                </div>
+                <!-- /.nav-tabs-custom -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>

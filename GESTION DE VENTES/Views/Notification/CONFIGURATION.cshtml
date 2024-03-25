@@ -1,0 +1,54 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Configuration des notifications</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card card-primary">
+    <div class="card-body">
+        <div class="row">
+            <div class="col-md-6">
+                <label>Lorsqu'un BLF (achat) est créé  <span style="color:red">*</span></label>
+                <select class="form-control">
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Lorsqu'un BL (vente) est créé  <span style="color:red">*</span></label>
+                <select class="form-control">
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+            </div>
+        </div>
+        <br />
+        <div class="row">
+            <div class="col-md-6">
+                <label>Recevoir un mail à la fin de la journée (recup journalier)</label>
+                <select class="form-control">
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label>Recevoir un mail lors de la suppression d'un document</label>
+                <select class="form-control">
+                    <option>Oui</option>
+                    <option>Non</option>
+                </select>
+            </div>
+        </div>
+        <br />
+    </div>
+    <div class="card-footer">
+        <button style="float:right" type="submit" class="btn btn-success">Valider</button>
+    </div>
+
+</div>

@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "Liste des fournisseurs";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des fournisseurs</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <!-- /.card-header -->
+        <div class="card-header">
+            <button onclick="show_modal('modal-add')" style="float:right" class="btn btn-success"> Ajouter </button>
+        </div>
+        <div class="card-body">
+            <table id="tab_fournisseur" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Code </th>
+                        <th>Nom complet</th>
+                        <th>Téléphone</th>
+                        <th>Matricule fiscale</th>
+                        <th>Solde</th>
+                        <th style="width:100px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>F0001</td>
+                        <td>
+                            Ste Hammouda
+                        </td>
+                        <td>71 552 336</td>
+                        <td>0555174L/A/M/000</td>
+                        <td style="color:red">-780,000</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Fournisseur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>F0002</td>
+                        <td>
+                            Ste Ben Amor
+                        </td>
+                        <td>24 552 000</td>
+                        <td></td>
+                        <td style="color:red">-80,000</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Fournisseur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>F0003</td>
+                        <td>
+                            Mohamed Tijani
+                        </td>
+                        <td> 55 888 111</td>
+                        <td>06554778</td>
+                        <td style="color:green"> 0,000</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Fournisseur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>F0004</td>
+                        <td>
+                            Ste Younes
+                        </td>
+                        <td>22 558 441</td>
+                        <td></td>
+                        <td style="color:red"> -1170,000</td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/Fournisseur/DETAILS" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+<div class="modal fade" id="modal-add">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Nouveau fournisseur</h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form>
+                <div class="modal-body">
+
+                    <div class="col-xs-12">
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Nom complet</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Matricule fiscale</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Téléphone</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                    <button type="submit" class="btn btn-primary">Valider</button>
+                </div>
+            </form>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+
+
+<script>
+    $(function () {
+        $('#tab_fournisseur').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").addClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").addClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").removeClass("active");
+        $("#GDD_BL_ACHAT").removeClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>

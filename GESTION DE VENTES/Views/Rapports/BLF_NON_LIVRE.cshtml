@@ -1,0 +1,110 @@
+﻿
+@{
+    ViewBag.Title = "BL_ACHAT_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Liste des bons de livraison <span style="color:red">non livrés</span></h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <table id="tab_bla" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Numéro </th>
+                        <th>Date</th>
+                        <th>Fournisseur</th>
+                        <th>Livreur</th>
+                        <th>Camion</th>
+                        <th style="text-align:right">HT</th>
+                        <th style="text-align:right">TTC</th>
+                        <th style="width:100px"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BLF210594002</td>
+                        <td>
+                            15/01/2021
+                        </td>
+                        <td>STE Ben Rhouma</td>
+                        <td>Ahmed Guidara</td>
+                        <th> 108 TU 0550</th>
+                        <td style="text-align:right"> 5000,000 </td>
+                        <td style="text-align:right"> 6120,380 </td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/GestionBLF/DETAILS_BLF" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>BLF21020049</td>
+                        <td>
+                            08/01/2021
+                        </td>
+                        <td>STE Maram</td>
+                        <td>Tarek Ousleti</td>
+                        <th> 97 TU 8442</th>
+                        <td style="text-align:right"> 4820,000 </td>
+                        <td style="text-align:right"> 5706,630 </td>
+                        <td style="text-align:right">
+                            <div class="btn-group btn-group-sm">
+                                <a href="/GestionBLF/DETAILS_BLF" class="btn btn-primary"><i class="fas fa-eye"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+</div>
+<!-- /.content -->
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_bla').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").addClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>
+

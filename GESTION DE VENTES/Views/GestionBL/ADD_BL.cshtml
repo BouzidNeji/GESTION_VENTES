@@ -1,0 +1,113 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.22/pdfmake.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+
+<br />
+<section class="content">
+    <div class="row">
+        <div class="col-12">
+            <div class="callout callout-info">
+                <h5> Nouveau bon de livraison vente</h5>
+            </div>
+
+            <div class="invoice p-3 mb-3">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label>Client <span style="color:red">*</span></label>
+                            <select class="form-control">
+                                <option disabled value="" selected></option>
+                                <option>Ahmed ben Ali</option>
+                                <option>STE Samir Sifi</option>
+                                <option>STE Ammar</option>
+                                <option>STE Mahmoud Guiza</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Date</label>
+                            <input type="date" class="form-control">
+                        </div>
+                        <div class="col-md-2">
+                            <label>Type de vente</label>
+                            <select class="form-control">
+                                <option>Vente directe</option>
+                                <option>Avec transport</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <label>Camion</label>
+                            <select class="form-control">
+                                <option disabled value="" selected></option>
+                                <option>IVECO - 160 TU 4420</option>
+                                <option>RENAULT - 172 TU 0147</option>
+                                <option>FIAT OM - 89 TU 1585</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label>Chauffeur </label>
+                            <select class="form-control">
+                                <option disabled value="" selected></option>
+                                <option>Salah ben ali</option>
+                                <option>Ahmed agrbui</option>
+                                <option>Mohamed hsan</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div class="row">
+                        <div class="col-12 table-responsive">
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Article</th>
+                                        <th>Quantité</th>
+                                        <th>PU</th>
+                                        <th>TVA</th>
+                                        <th>TTC</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Brique 8 trous</td>
+                                        <td><input type="number" step="1" class="form-control" min="0" /></td>
+                                        <td><input type="number" step="0.001" class="form-control" value="0.530" /></td>
+                                        <td>19%</td>
+                                        <td>0,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brique 16 trous</td>
+                                        <td><input type="number" step="1" class="form-control" min="0" /></td>
+                                        <td><input type="number" step="0.001" class="form-control" value="0.560" /></td>
+                                        <td>19%</td>
+                                        <td>0,000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gravier</td>
+                                        <td><input type="number" step="1" class="form-control" min="0" /></td>
+                                        <td><input type="number" step="0.001" class="form-control" value="70.000" /></td>
+                                        <td>19%</td>
+                                        <td>0,000</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                    <div class="row no-print">
+                        <div class="col-12">
+
+                            <button type="button" class="btn btn-success float-right">
+                                Valider
+                            </button>
+                            <button type="button" class="btn btn-primary float-right" style="margin-right: 5px;">
+                                Annuler
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.invoice -->
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</section>
+<!-- /.content -->

@@ -1,0 +1,282 @@
+﻿@Scripts.Render("~/bundles/jquery")
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+<script src="~/Content/AdminLTE-master/plugins/chart.js/Chart.min.js"></script>
+<link rel="stylesheet" href="~/Content/dist/css/adminlte.min.css">
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Rapport jounalier du 22/02/2021</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="callout callout-info">
+                    <p><center>Date: <input type="date" class="form-control" /> </center> </p>
+                </div>
+                <div class="card">
+                    <div class="card-header p-2">
+                        <ul class="nav nav-pills">
+                            <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Statistiques</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Liste des BL</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#reglement" data-toggle="tab">Règlements</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#externe" data-toggle="tab">Services externes</a></li>
+                        </ul>
+                    </div>
+                    <div class="card-body">
+                        <div class="tab-content">
+                            <div class="active tab-pane" id="activity">
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total BL vente</span>
+                                                    <span class="info-box-number">6</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total CA vente</span>
+                                                    <span class="info-box-number">6000.000</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total camions utilisés</span>
+                                                    <span class="info-box-number">3</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <span class="info-box-icon bg-danger"><i class="far fa-star"></i></span>
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Encaissement</span>
+                                                    <span class="info-box-number" style="color:green">1725,900</span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total des BLF achat</span>
+                                                    <span class="info-box-number">
+                                                        4
+                                                    </span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total BLF achat</span>
+                                                    <span class="info-box-number">
+                                                        1200,350
+                                                    </span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Total quantité manquante</span>
+                                                    <span class="info-box-number" style="color:red">
+                                                        5
+                                                    </span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3 col-sm-6 col-12">
+                                        <div class="info-box">
+                                            <div class="info-box-content">
+                                                <center>
+                                                    <span class="info-box-text">Service externe</span>
+                                                    <span class="info-box-number">
+                                                        1
+                                                    </span>
+                                                </center>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h3 class="card-title" style="color:green">Quantité totale par articles</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+                                                    <th>Article</th>
+                                                    <th>Quantité vendue</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>BRIQUE x8</td>
+                                                    <td><center><strong>7000</strong></center></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>BRIQUE x16</td>
+                                                    <td><center><strong>6582</strong></center></td>
+                                                </tr>
+                                                <tr>
+                                                    <td>GRAVIER</td>
+                                                    <td><center><strong>2</strong></center></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="settings">
+                                <br />
+                                <div class="row">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>N° BL</th>
+                                                <th>Client</th>
+                                                <th>Montant</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>BL00005</td>
+                                                <td>Ahmed mhamdi</td>
+                                                <td>
+                                                    117,050
+                                                </td>
+                                                <td><span onclick="location.href='/GestionBL/DETAILS_BL'" class="fa fa-search"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BL00026</td>
+                                                <td>Ste New house</td>
+                                                <td>
+                                                    1 500,000
+                                                </td>
+                                                <td><span onclick="location.href='/GestionBL/DETAILS_BL'" class="fa fa-search"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>BL00047</td>
+                                                <td>Amina ben hmed</td>
+                                                <td>
+                                                    915,000
+                                                </td>
+                                                <td><span onclick="location.href='/GestionBL/DETAILS_BL'" class="fa fa-search"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="reglement">
+                                <br />
+                                <div class="row">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>N°</th>
+                                                <th>Client</th>
+                                                <th>Montant</th>
+                                                <th>Mode de paiement</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>REG000711</td>
+                                                <td>Amina ben hmed</td>
+                                                <td>
+                                                    117,050
+                                                </td>
+                                                <td>Espèces</td>
+                                            </tr>
+                                            <tr>
+                                                <td>REG000340</td>
+                                                <td>Ste ben ali</td>
+                                                <td>
+                                                    1 500,000
+                                                </td>
+                                                <td>Chèque</td>
+                                            </tr>
+                                            <tr>
+                                                <td>REG000221</td>
+                                                <td>Amina ben hmed</td>
+                                                <td>
+                                                    915,000
+                                                </td>
+                                                <td>Espèces</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="tab-pane" id="externe">
+                                <br />
+                                <div class="row">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>N° Demande</th>
+                                                <th>Fournisseur</th>
+                                                <th>Camion</th>
+                                                <th>Montant</th>
+                                                <th></th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>DM00014</td>
+                                                <td>Amina ben hmed</td>
+                                                <td>
+                                                    1404 TU 140
+                                                </td>
+                                                <td>225,000</td>
+                                                <td><span class="fa fa-search"></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>DM00043</td>
+                                                <td>Ste ben ali</td>
+                                                <td>
+                                                    1404 TU 140
+                                                </td>
+                                                <td>550,000</td>
+                                                <td><span class="fa fa-search"></span></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

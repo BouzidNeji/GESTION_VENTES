@@ -1,0 +1,81 @@
+﻿
+@{
+    ViewBag.Title = "BL_ACHAT_LIST";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Content Header (Page header) -->
+<div class="content-header">
+    <div class="container-fluid">
+        <div class="row mb-2">
+            <div class="col-sm-6">
+                <h1 class="m-0">Solde des collaborateurs - Manque caisse</h1>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.container-fluid -->
+</div>
+<!-- /.content-header -->
+<!-- Main content -->
+<div class="content">
+    <div class="card">
+        <div class="card-body">
+            <table id="tab_bla" class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>Collaborateur</th>
+                        <th style="text-align:right">Solde</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Ahmed Guidara</td>
+                        <td style="text-align:right;color:red"> 12,500 </td>
+                    </tr>
+                    <tr>
+                        <td>Tarek Ousleti</td>
+                        <td style="text-align:right;color:red"> 40,700 </td>
+                    </tr>
+                    <tr>
+                        <td>Ben Hammouda</td>
+                        <td style="text-align:right;color:green">0,000 </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    function show_modal(m) {
+        $("#" + m).modal("show");
+    }
+</script>
+
+<script>
+    $(function () {
+        $('#tab_bla').DataTable({
+            "paging": true,
+            "lengthChange": false,
+            "searching": false,
+            "ordering": true,
+            "info": true,
+            "autoWidth": false,
+            "responsive": true,
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $('#HOME_INDEX').removeClass('active');
+        $("#DDB").removeClass("active");
+        $("#DDB_COLLABORATEUR").removeClass("active");
+        $("#DDB_FOURNISSEUR").removeClass("active");
+        $("#DDB_CLIENT").removeClass("active");
+        $("#DDB_CAMION").removeClass("active");
+        $("#DDB_ARTICLE").removeClass("active");
+        $("#GDD").addClass("active");
+        $("#GDD_BL_ACHAT").addClass("active");
+        $("#GDD_BL_VENTE").removeClass("active");
+    });
+</script>
+
